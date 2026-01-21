@@ -38,7 +38,7 @@ A Chrome extension that automatically replaces "Trump" with delightful nicknames
 ### Manual Installation (Developer Mode)
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/orange-cheeto.git
+   git clone https://github.com/pcortes/orange-cheeto.git
    ```
 2. Open Chrome and navigate to `chrome://extensions/`
 3. Enable "Developer mode" (toggle in top-right)
