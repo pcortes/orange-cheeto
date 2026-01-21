@@ -33,8 +33,9 @@ echo "Copying extension files..."
 # Copy manifest
 cp "$SCRIPT_DIR/manifest.json" "$BUILD_DIR/"
 
-# Copy assets
-cp -r "$SCRIPT_DIR/assets" "$BUILD_DIR/"
+# Copy assets (excluding store screenshots - those are uploaded separately)
+mkdir -p "$BUILD_DIR/assets"
+cp -r "$SCRIPT_DIR/assets/icons" "$BUILD_DIR/assets/"
 
 # Copy source files
 cp -r "$SCRIPT_DIR/src" "$BUILD_DIR/"
