@@ -1,0 +1,256 @@
+/**
+ * Orange Cheeto - Content Script Styles
+ * Delightful animations and hover effects for replaced text
+ */
+
+/* ============================================
+   Base Replaced Word Style
+   ============================================ */
+.oc-replaced {
+  display: inline;
+  position: relative;
+  padding: 0.1em 0.2em;
+  margin: 0 -0.2em;
+  border-radius: 0.3em;
+  background: linear-gradient(135deg,
+    rgba(255, 140, 0, 0.18) 0%,    /* orange */
+    rgba(255, 69, 0, 0.14) 100%);  /* red-orange */
+  color: inherit;
+  cursor: help;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  font-style: inherit;
+  font-weight: inherit;
+}
+
+/* Slight lift on hover */
+.oc-replaced:hover {
+  background: linear-gradient(135deg,
+    rgba(255, 140, 0, 0.28) 0%,
+    rgba(255, 69, 0, 0.22) 100%);
+  box-shadow: 0 2px 8px rgba(255, 140, 0, 0.25);
+}
+
+/* ============================================
+   Pop-in Animation (page load / new content)
+   ============================================ */
+@keyframes ocPopIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+    filter: blur(4px);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.05);
+    filter: blur(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.oc-replaced--entering {
+  animation: ocPopIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* ============================================
+   Shimmer Effect (ambient delight)
+   ============================================ */
+@keyframes ocShimmer {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+.oc-replaced--shimmer {
+  background:
+    linear-gradient(90deg,
+      transparent 0%,
+      rgba(255, 215, 0, 0.35) 25%,
+      rgba(255, 255, 255, 0.5) 50%,
+      rgba(255, 215, 0, 0.35) 75%,
+      transparent 100%
+    ),
+    linear-gradient(135deg,
+      rgba(255, 140, 0, 0.18) 0%,
+      rgba(255, 69, 0, 0.14) 100%);
+  background-size: 200% 100%, 100% 100%;
+  animation: ocShimmer 3s ease-in-out infinite;
+}
+
+/* ============================================
+   Glow Effect (subtle pulsing glow)
+   ============================================ */
+@keyframes ocGlow {
+  0%, 100% {
+    box-shadow:
+      0 0 3px rgba(255, 140, 0, 0.3),
+      0 0 6px rgba(255, 140, 0, 0.1);
+  }
+  50% {
+    box-shadow:
+      0 0 8px rgba(255, 140, 0, 0.5),
+      0 0 16px rgba(255, 140, 0, 0.2);
+  }
+}
+
+.oc-replaced--glow {
+  animation: ocGlow 2s ease-in-out infinite;
+}
+
+/* ============================================
+   Pulse Effect (scale pulse)
+   ============================================ */
+@keyframes ocPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 0.85;
+  }
+}
+
+.oc-replaced--pulse {
+  display: inline-block;
+  animation: ocPulse 2.5s ease-in-out infinite;
+}
+
+/* ============================================
+   Hover Tooltip (show original word)
+   ============================================ */
+.oc-replaced::before {
+  content: 'was: "' attr(data-original) '"';
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) scale(0.9);
+  padding: 6px 10px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #f0f0f0;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.3;
+  white-space: nowrap;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+  z-index: 999999;
+  pointer-events: none;
+}
+
+/* Tooltip arrow */
+.oc-replaced::after {
+  content: '';
+  position: absolute;
+  bottom: calc(100% + 2px);
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #1a1a2e;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease;
+  z-index: 999999;
+  pointer-events: none;
+}
+
+/* Show tooltip on hover */
+.oc-replaced:hover::before {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) scale(1);
+}
+
+.oc-replaced:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Tooltip positioning fallback for edge cases */
+.oc-replaced:hover::before {
+  /* Prevent tooltip from going off-screen left */
+  min-width: max-content;
+}
+
+/* ============================================
+   Reduced Motion - Respect user preferences
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  .oc-replaced,
+  .oc-replaced--entering,
+  .oc-replaced--shimmer,
+  .oc-replaced--glow,
+  .oc-replaced--pulse {
+    animation: none !important;
+    transition: background-color 0.2s ease !important;
+  }
+
+  .oc-replaced::before {
+    transition: opacity 0.1s ease !important;
+    transform: translateX(-50%) !important;
+  }
+}
+
+/* ============================================
+   Dark Mode Adjustments
+   ============================================ */
+@media (prefers-color-scheme: dark) {
+  .oc-replaced {
+    background: linear-gradient(135deg,
+      rgba(255, 140, 0, 0.25) 0%,
+      rgba(255, 69, 0, 0.2) 100%);
+  }
+
+  .oc-replaced:hover {
+    background: linear-gradient(135deg,
+      rgba(255, 140, 0, 0.35) 0%,
+      rgba(255, 69, 0, 0.28) 100%);
+  }
+
+  .oc-replaced--shimmer {
+    background:
+      linear-gradient(90deg,
+        transparent 0%,
+        rgba(255, 215, 0, 0.25) 25%,
+        rgba(255, 255, 255, 0.35) 50%,
+        rgba(255, 215, 0, 0.25) 75%,
+        transparent 100%
+      ),
+      linear-gradient(135deg,
+        rgba(255, 140, 0, 0.25) 0%,
+        rgba(255, 69, 0, 0.2) 100%);
+    background-size: 200% 100%, 100% 100%;
+  }
+}
+
+/* ============================================
+   Print Styles - Clean output for printing
+   ============================================ */
+@media print {
+  .oc-replaced {
+    background: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    animation: none !important;
+    box-shadow: none !important;
+  }
+
+  .oc-replaced::before,
+  .oc-replaced::after {
+    display: none !important;
+  }
+}
