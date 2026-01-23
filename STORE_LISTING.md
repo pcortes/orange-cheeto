@@ -70,6 +70,9 @@ Sometimes you just need a little levity in your news consumption. This extension
 
 Love the extension? Consider buying me a covfefe: [Ko-fi link]
 Found a bug? Report it on GitHub: [GitHub link]
+Support email: orangecheetotaco@gmail.com
+Privacy policy: https://gist.github.com/pcortes/5f30b8822433efe60f60b838a29958c8
+Terms: https://gist.github.com/pcortes/312d4e1657ec62da59cc0946274be9d9
 
 ---
 
@@ -92,8 +95,15 @@ Trump, nickname, browser extension, Chrome extension, text replacer, political s
 - [x] 48x48 PNG - `/assets/icons/icon-48.png`
 - [x] 128x128 PNG - `/assets/icons/icon-128.png`
 
-### Screenshots (NEED TO CREATE)
+### Screenshots (READY)
 Minimum 1, recommended 3-5 screenshots at 1280x800 or 640x400 pixels
+
+Files to upload:
+- `/assets/store/resized-screenshot-1.png` (Before/After News Headline)
+- `/assets/store/resized-screenshot-2.png` (Settings Popup)
+- `/assets/store/resized-screenshot-3.png` (In Action on Social Media)
+- `/assets/store/resized-screenshot-4.png` (Hover Tooltip)
+- `/assets/store/resized-screenshot-5.png` (Badge Counter)
 
 **Screenshot 1: Before/After News Headline**
 - Show a real news article (NYT, CNN, WaPo style)
@@ -153,7 +163,7 @@ Before submitting to Chrome Web Store:
 - [ ] Upload ZIP to developer dashboard
 - [ ] Fill in listing details (copy from above)
 - [ ] Upload all screenshots
-- [ ] Set privacy policy URL
+- [ ] Set privacy policy URL: https://gist.github.com/pcortes/5f30b8822433efe60f60b838a29958c8
 - [ ] Select category: Entertainment
 - [ ] Set to Free
 - [ ] Select distribution countries (Worldwide recommended)
