@@ -1,6 +1,6 @@
 # Privacy Policy for Orange Cheeto Chrome Extension
 
-**Last Updated: January 2026**
+**Last Updated: January 23, 2026**
 
 ## Overview
 
@@ -83,7 +83,7 @@ If we ever change this privacy policy, we will update the "Last Updated" date at
 
 If you have questions about this privacy policy:
 - Open an issue on our GitHub repository
-- Email: [your email if you want to provide one]
+- Email: orangecheetotaco@gmail.com
 
 ## Summary
 
