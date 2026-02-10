@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "code": "en",
+    "name": "English",
+    "nativeName": "English"
+  },
+  "nicknames": [
+    { "id": "orange-cheeto", "text": "Orange Cheeto", "defaultEnabled": true },
+    { "id": "mango-mussolini", "text": "Mango Mussolini", "defaultEnabled": true },
+    { "id": "cheeto-benito", "text": "Cheeto Benito", "defaultEnabled": true },
+    { "id": "tangerine-tyrant", "text": "The Tangerine Tyrant", "defaultEnabled": true },
+    { "id": "agent-orange", "text": "Agent Orange", "defaultEnabled": true },
+    { "id": "dorito-mussolini", "text": "Dorito Mussolini", "defaultEnabled": false },
+    { "id": "cheeto-jesus", "text": "Cheeto Jesus", "defaultEnabled": false }
+  ]
+}

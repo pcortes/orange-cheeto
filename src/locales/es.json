@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "code": "es",
+    "name": "Spanish",
+    "nativeName": "Espanol"
+  },
+  "nicknames": [
+    { "id": "orange-cheeto", "text": "El Cheeto Naranja", "defaultEnabled": true },
+    { "id": "mango-mussolini", "text": "Don Peluca", "defaultEnabled": true },
+    { "id": "cheeto-benito", "text": "El Emperador Bronceado", "defaultEnabled": true },
+    { "id": "tangerine-tyrant", "text": "Trumpudo", "defaultEnabled": true },
+    { "id": "agent-orange", "text": "El Tuitero Loco", "defaultEnabled": true },
+    { "id": "dorito-mussolini", "text": "Mandarina en Jefe", "defaultEnabled": false },
+    { "id": "cheeto-jesus", "text": "El Guero Griton", "defaultEnabled": false }
+  ]
+}
