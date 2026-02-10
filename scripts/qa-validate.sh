@@ -175,6 +175,14 @@ validate_chrome() {
         else
             fail "JS syntax error: locales.js"
         fi
+        # Verify all required languages are present
+        for lang in en es fr de; do
+            if grep -qE "^[[:space:]]*${lang}:" "$CHROME_DIR/src/shared/locales.js" 2>/dev/null; then
+                pass "Locale present: $lang"
+            else
+                fail "Locale missing: $lang"
+            fi
+        done
     else
         warn "Locales.js not found (i18n not yet implemented)"
     fi

@@ -7,52 +7,25 @@
 
 ## Active Issues
 
-### Issue #1: Firefox manifest missing strict_min_version
-
-**Severity:** Medium
-**Browser:** Firefox
-**Status:** Reported to architect
-**Found:** 2026-02-10
-
-**Description:**
-The Firefox manifest at `extensions/firefox/manifest.json` is missing the `strict_min_version` field in the gecko settings.
-
-**Current Configuration:**
-```json
-"browser_specific_settings": {
-  "gecko": {
-    "id": "orange-cheeto@thedudeabode",
-    "data_collection_permissions": {
-      "required": ["none"],
-      "optional": []
-    }
-  }
-}
-```
-
-**Required Configuration (per UNIFIED_ARCHITECTURE.md):**
-```json
-"browser_specific_settings": {
-  "gecko": {
-    "id": "orange-cheeto@thedudeabode",
-    "strict_min_version": "109.0"
-  }
-}
-```
-
-**Impact:**
-- Firefox MV3 support was added in version 109
-- Without this field, extension may attempt to install on incompatible older Firefox versions
-- Could cause confusing error messages for users on older Firefox
-
-**Resolution:**
-Add `strict_min_version: "109.0"` when creating unified `manifests/firefox.json` during architecture migration.
+*No active issues at this time.*
 
 ---
 
 ## Resolved Issues
 
-*No resolved issues yet.*
+### Issue #1: Firefox manifest missing strict_min_version (RESOLVED)
+
+**Severity:** Medium
+**Browser:** Firefox
+**Status:** RESOLVED
+**Found:** 2026-02-10
+**Resolved:** 2026-02-10
+
+**Description:**
+The Firefox manifest was missing the `strict_min_version` field in the gecko settings.
+
+**Resolution:**
+Fixed in Task #2 (Create unified build script). The `manifests/firefox.json` now includes `strict_min_version: "109.0"`. Verified by automated QA validation.
 
 ---
 
