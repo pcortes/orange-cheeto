@@ -1,0 +1,21 @@
+{
+  "name": "orange-cheeto-extension",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "vitest",
+    "test:coverage": "vitest --coverage",
+    "test:ui": "vitest --ui",
+    "build": "./scripts/build.sh all",
+    "build:chrome": "./scripts/build.sh chrome",
+    "build:firefox": "./scripts/build.sh firefox",
+    "lint": "eslint src/"
+  },
+  "devDependencies": {
+    "vitest": "^1.6.0",
+    "@vitest/coverage-v8": "^1.6.0",
+    "happy-dom": "^14.12.0",
+    "eslint": "^8.57.0"
+  }
+}
