@@ -29,6 +29,30 @@ Fixed in Task #2 (Create unified build script). The `manifests/firefox.json` now
 
 ---
 
+### Issue #2: locales.js missing from content scripts (RESOLVED)
+
+**Severity:** Critical
+**Browser:** Chrome / Firefox
+**Status:** RESOLVED
+**Found:** 2026-02-10
+**Resolved:** 2026-02-10
+
+**Description:**
+The manifest `content_scripts` array was missing `src/shared/locales.js`. This caused `OrangeCheetoLocales` to be undefined in the content script context, which would cause `storage.js::getEnabledReplacements()` to return an empty array and no replacements would occur.
+
+**Steps to Reproduce:**
+1. Load extension
+2. Navigate to a page with "trump" text
+3. No replacements would happen
+
+**Impact:**
+Extension would be completely non-functional - zero replacements would occur.
+
+**Resolution:**
+Added `src/shared/locales.js` as the first entry in the content_scripts js array in both `manifests/chrome.json` and `manifests/firefox.json`. Locales must load before storage.js since storage.js depends on `OrangeCheetoLocales`.
+
+---
+
 ## Migration Testing Checklist
 
 When testing the v1 -> v2 storage migration, verify these scenarios:
@@ -100,12 +124,94 @@ The current extensions (pre-i18n) are ready for manual baseline testing:
 - Location: `/Users/philipjcortes/Desktop/_catchall/orange_cheeto/extensions/firefox/`
 - Load via: `about:debugging` > This Firefox > Load Temporary Add-on > select manifest.json
 
-### Pending i18n Testing
+### Chrome Automated QA Validation (PASSED)
 
-Tasks #11 and #12 are blocked until implementation of:
-- Task #6: Update replacer for i18n nicknames
-- Task #7: Add language selector to popup UI
-- Task #8: Update background service worker for migration
+**Date:** 2026-02-10
+
+Ran `./scripts/qa-validate.sh chrome` with 27/27 tests passed:
+- All directory structure checks passed
+- manifest.json valid with manifest_version: 3
+- All required JS files present and syntactically valid
+- All icon sizes present (16, 32, 48, 128)
+- locales.js exists with all 4 languages (en, es, fr, de)
+- Language detection function present in content script
+
+### Chrome Manual Testing Checklist
+
+The following items require manual browser testing:
+
+**Extension Loading:**
+- [ ] Extension loads without errors in Chrome
+- [ ] No console errors on popup open
+
+**Popup UI:**
+- [ ] Master toggle works (enable/disable)
+- [ ] Language selector shows all 5 options (Auto, English, Espanol, Francais, Deutsch)
+- [ ] Language note shows detected language when on "Auto"
+- [ ] Nickname list renders correctly for each language
+- [ ] Nickname toggles work (enable/disable individual)
+- [ ] Custom nickname input works (add/remove)
+- [ ] Animation selector works (shimmer/glow/pulse/none)
+- [ ] Ko-fi donate link works
+- [ ] Privacy and Terms links work
+
+**Replacement Functionality:**
+- [ ] Replacements happen on news sites with "trump" content
+- [ ] Case preservation works (trump -> orange cheeto, Trump -> Orange Cheeto, TRUMP -> ORANGE CHEETO)
+- [ ] Animation effects display correctly
+- [ ] Badge count updates accurately
+- [ ] Disabling extension reverts all replacements
+
+**i18n Language Detection:**
+- [ ] English site (cnn.com) detects "en"
+- [ ] Spanish site (elpais.com) detects "es"
+- [ ] French site (lemonde.fr) detects "fr"
+- [ ] German site (spiegel.de) detects "de"
+- [ ] Nicknames change to match detected language
+
+**Settings Persistence:**
+- [ ] Settings persist after browser restart
+- [ ] Settings sync across devices (if signed in)
+
+### Firefox Automated QA Validation (PASSED)
+
+**Date:** 2026-02-10
+
+Ran `./scripts/qa-validate.sh firefox` with 14/14 tests passed:
+- All directory structure checks passed
+- manifest.json valid with manifest_version: 3
+- Firefox gecko.id present
+- Firefox strict_min_version present (109.0)
+- Firefox background uses 'scripts' array format (not service_worker)
+- All required files present
+
+### Firefox Manual Testing Checklist
+
+The following items require manual browser testing:
+
+**Extension Loading:**
+- [ ] Extension loads without errors in Firefox
+- [ ] No console errors on popup open
+
+**Popup UI:**
+- [ ] Master toggle works (enable/disable)
+- [ ] Language selector shows all 5 options (Auto, English, Espanol, Francais, Deutsch)
+- [ ] Nickname toggles work
+- [ ] Custom nickname input works
+- [ ] Animation selector works
+
+**Replacement Functionality:**
+- [ ] Replacements happen on pages with "trump" content
+- [ ] Case preservation works
+- [ ] Animation effects display correctly
+- [ ] Disabling extension reverts all replacements
+
+**i18n Language Detection:**
+- [ ] Auto-detection works correctly
+- [ ] Manual language selection works
+
+**Settings Persistence:**
+- [ ] Settings persist after browser restart
 
 ---
 
