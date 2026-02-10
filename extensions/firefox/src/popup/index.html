@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orange Cheeto Settings</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="popup">
+    <!-- Header -->
+    <header class="header">
+      <div class="header__brand">
+        <div class="header__icon">🍊</div>
+        <h1 class="header__title">Orange Cheeto</h1>
+      </div>
+      <label class="toggle">
+        <input type="checkbox" id="masterToggle" checked>
+        <span class="toggle__slider"></span>
+      </label>
+    </header>
+
+    <!-- Stats Bar -->
+    <div class="stats" id="statsBar">
+      <span class="stats__count" id="replaceCount">0</span>
+      <span class="stats__label">replacements on this page</span>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main" id="mainContent">
+      <!-- Replacement List -->
+      <section class="section">
+        <h2 class="section__title">Nicknames</h2>
+        <ul class="replacement-list" id="replacementList">
+          <!-- Populated by JS -->
+        </ul>
+      </section>
+
+      <!-- Custom Input -->
+      <section class="section">
+        <h2 class="section__title">Add Your Own</h2>
+        <div class="custom-input">
+          <input
+            type="text"
+            id="customText"
+            placeholder="Enter a nickname..."
+            maxlength="50"
+          >
+          <button id="addCustom" class="btn btn--small">Add</button>
+        </div>
+      </section>
+
+      <!-- Animation Selector -->
+      <section class="section">
+        <h2 class="section__title">Animation Style</h2>
+        <div class="animation-selector" id="animationSelector">
+          <label class="radio-card">
+            <input type="radio" name="animation" value="shimmer" checked>
+            <span class="radio-card__label">
+              <span class="radio-card__icon">✨</span>
+              Shimmer
+            </span>
+          </label>
+          <label class="radio-card">
+            <input type="radio" name="animation" value="glow">
+            <span class="radio-card__label">
+              <span class="radio-card__icon">💫</span>
+              Glow
+            </span>
+          </label>
+          <label class="radio-card">
+            <input type="radio" name="animation" value="pulse">
+            <span class="radio-card__label">
+              <span class="radio-card__icon">💓</span>
+              Pulse
+            </span>
+          </label>
+          <label class="radio-card">
+            <input type="radio" name="animation" value="none">
+            <span class="radio-card__label">
+              <span class="radio-card__icon">🚫</span>
+              None
+            </span>
+          </label>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <a href="https://ko-fi.com/thedudeabode" target="_blank" rel="noopener" class="donate-link">
+        Fund my covfefe ☕
+      </a>
+      <div class="legal-links">
+        <a href="https://gist.github.com/pcortes/5f30b8822433efe60f60b838a29958c8" target="_blank" rel="noopener">Privacy</a>
+        <span class="legal-divider">·</span>
+        <a href="https://gist.github.com/pcortes/312d4e1657ec62da59cc0946274be9d9" target="_blank" rel="noopener">Terms</a>
+      </div>
+      <p class="satire-notice">Political satire protected by the First Amendment</p>
+    </footer>
+
+  </div>
+
+  <script src="../shared/storage.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

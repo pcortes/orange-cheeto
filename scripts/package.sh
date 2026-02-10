@@ -11,9 +11,11 @@ YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-BUILD_DIR="$SCRIPT_DIR/build"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+CHROME_EXT_DIR="$PROJECT_ROOT/extensions/chrome"
+BUILD_DIR="$PROJECT_ROOT/build"
 EXTENSION_NAME="orange-cheeto"
-VERSION=$(grep -o '"version": "[^"]*"' "$SCRIPT_DIR/manifest.json" | cut -d'"' -f4)
+VERSION=$(grep -o '"version": "[^"]*"' "$CHROME_EXT_DIR/manifest.json" | cut -d'"' -f4)
 ZIP_NAME="${EXTENSION_NAME}-v${VERSION}.zip"
 
 echo -e "${YELLOW}Packaging Orange Cheeto v${VERSION}${NC}"
@@ -31,26 +33,26 @@ mkdir -p "$BUILD_DIR"
 echo "Copying extension files..."
 
 # Copy manifest
-cp "$SCRIPT_DIR/manifest.json" "$BUILD_DIR/"
+cp "$CHROME_EXT_DIR/manifest.json" "$BUILD_DIR/"
 
 # Copy assets (excluding store screenshots - those are uploaded separately)
 mkdir -p "$BUILD_DIR/assets"
-cp -r "$SCRIPT_DIR/assets/icons" "$BUILD_DIR/assets/"
+cp -r "$CHROME_EXT_DIR/assets/icons" "$BUILD_DIR/assets/"
 
 # Copy source files
-cp -r "$SCRIPT_DIR/src" "$BUILD_DIR/"
+cp -r "$CHROME_EXT_DIR/src" "$BUILD_DIR/"
 
 # Create the ZIP file
 echo "Creating ZIP file..."
 cd "$BUILD_DIR"
 zip -r "../$ZIP_NAME" . -x "*.DS_Store" -x "*__MACOSX*"
-cd "$SCRIPT_DIR"
+cd "$PROJECT_ROOT"
 
 # Clean up build directory
 rm -rf "$BUILD_DIR"
 
 # Get file size
-SIZE=$(ls -lh "$ZIP_NAME" | awk '{print $5}')
+SIZE=$(ls -lh "$PROJECT_ROOT/$ZIP_NAME" | awk '{print $5}')
 
 echo ""
 echo -e "${GREEN}Success!${NC}"
@@ -63,7 +65,7 @@ echo "1. Go to https://chrome.google.com/webstore/devconsole"
 echo "2. Pay \$5 registration fee (one-time) if not already done"
 echo "3. Click 'New Item'"
 echo "4. Upload $ZIP_NAME"
-echo "5. Fill in listing details (see STORE_LISTING.md)"
+echo "5. Fill in listing details (see docs/STORE_LISTING.md)"
 echo "6. Add screenshots (minimum 1, recommended 3-5)"
 echo "7. Submit for review"
 echo ""

@@ -1,0 +1,1038 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C55B57FB2F27EEA4009ED991 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55B57FA2F27EEA4009ED991 /* AppDelegate.swift */; };
+		C55B57FD2F27EEA4009ED991 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55B57FC2F27EEA4009ED991 /* SceneDelegate.swift */; };
+		C55B58002F27EEA4009ED991 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C55B57FE2F27EEA4009ED991 /* LaunchScreen.storyboard */; };
+		C55B58032F27EEA4009ED991 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C55B58012F27EEA4009ED991 /* Main.storyboard */; };
+		C55B580C2F27EEA4009ED991 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55B580B2F27EEA4009ED991 /* AppDelegate.swift */; };
+		C55B580F2F27EEA4009ED991 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C55B580D2F27EEA4009ED991 /* Main.storyboard */; };
+		C55B58162F27EEA4009ED991 /* Orange Cheeto Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C55B58152F27EEA4009ED991 /* Orange Cheeto Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C55B58202F27EEA4009ED991 /* Orange Cheeto Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C55B581F2F27EEA4009ED991 /* Orange Cheeto Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C55B58252F27EEA4009ED991 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = C55B57EA2F27EEA3009ED991 /* Main.html */; };
+		C55B58262F27EEA4009ED991 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = C55B57EA2F27EEA3009ED991 /* Main.html */; };
+		C55B58272F27EEA4009ED991 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C55B57EC2F27EEA3009ED991 /* Icon.png */; };
+		C55B58282F27EEA4009ED991 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C55B57EC2F27EEA3009ED991 /* Icon.png */; };
+		C55B58292F27EEA4009ED991 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = C55B57ED2F27EEA3009ED991 /* Style.css */; };
+		C55B582A2F27EEA4009ED991 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = C55B57ED2F27EEA3009ED991 /* Style.css */; };
+		C55B582B2F27EEA4009ED991 /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = C55B57EE2F27EEA3009ED991 /* Script.js */; };
+		C55B582C2F27EEA4009ED991 /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = C55B57EE2F27EEA3009ED991 /* Script.js */; };
+		C55B582D2F27EEA4009ED991 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55B57EF2F27EEA3009ED991 /* ViewController.swift */; };
+		C55B582E2F27EEA4009ED991 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55B57EF2F27EEA3009ED991 /* ViewController.swift */; };
+		C55B582F2F27EEA4009ED991 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C55B57F02F27EEA4009ED991 /* Assets.xcassets */; };
+		C55B58302F27EEA4009ED991 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C55B57F02F27EEA4009ED991 /* Assets.xcassets */; };
+		C55B58312F27EEA4009ED991 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55B57F22F27EEA4009ED991 /* SafariWebExtensionHandler.swift */; };
+		C55B58322F27EEA4009ED991 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55B57F22F27EEA4009ED991 /* SafariWebExtensionHandler.swift */; };
+		C55B58502F27EEA5009ED991 /* PRIVACY_POLICY.md in Resources */ = {isa = PBXBuildFile; fileRef = C55B58442F27EEA5009ED991 /* PRIVACY_POLICY.md */; };
+		C55B58512F27EEA5009ED991 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = C55B58452F27EEA5009ED991 /* LICENSE */; };
+		C55B58522F27EEA5009ED991 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C55B58462F27EEA5009ED991 /* README.md */; };
+		C55B58532F27EEA5009ED991 /* MARKETING.md in Resources */ = {isa = PBXBuildFile; fileRef = C55B58472F27EEA5009ED991 /* MARKETING.md */; };
+		C55B58542F27EEA5009ED991 /* SCREENSHOTS.md in Resources */ = {isa = PBXBuildFile; fileRef = C55B58482F27EEA5009ED991 /* SCREENSHOTS.md */; };
+		C55B58552F27EEA5009ED991 /* package.sh in Resources */ = {isa = PBXBuildFile; fileRef = C55B58492F27EEA5009ED991 /* package.sh */; };
+		C55B58562F27EEA5009ED991 /* LEGAL.md in Resources */ = {isa = PBXBuildFile; fileRef = C55B584A2F27EEA5009ED991 /* LEGAL.md */; };
+		C55B58572F27EEA5009ED991 /* orange-cheeto-v1.0.0.zip in Resources */ = {isa = PBXBuildFile; fileRef = C55B584B2F27EEA5009ED991 /* orange-cheeto-v1.0.0.zip */; };
+		C55B58582F27EEA5009ED991 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = C55B584C2F27EEA5009ED991 /* manifest.json */; };
+		C55B58592F27EEA5009ED991 /* STORE_LISTING.md in Resources */ = {isa = PBXBuildFile; fileRef = C55B584D2F27EEA5009ED991 /* STORE_LISTING.md */; };
+		C55B585A2F27EEA5009ED991 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = C55B584E2F27EEA5009ED991 /* assets */; };
+		C55B585B2F27EEA5009ED991 /* src in Resources */ = {isa = PBXBuildFile; fileRef = C55B584F2F27EEA5009ED991 /* src */; };
+		C55B585C2F27EEA5009ED991 /* PRIVACY_POLICY.md in Resources */ = {isa = PBXBuildFile; fileRef = C55B58442F27EEA5009ED991 /* PRIVACY_POLICY.md */; };
+		C55B585D2F27EEA5009ED991 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = C55B58452F27EEA5009ED991 /* LICENSE */; };
+		C55B585E2F27EEA5009ED991 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C55B58462F27EEA5009ED991 /* README.md */; };
+		C55B585F2F27EEA5009ED991 /* MARKETING.md in Resources */ = {isa = PBXBuildFile; fileRef = C55B58472F27EEA5009ED991 /* MARKETING.md */; };
+		C55B58602F27EEA5009ED991 /* SCREENSHOTS.md in Resources */ = {isa = PBXBuildFile; fileRef = C55B58482F27EEA5009ED991 /* SCREENSHOTS.md */; };
+		C55B58612F27EEA5009ED991 /* package.sh in Resources */ = {isa = PBXBuildFile; fileRef = C55B58492F27EEA5009ED991 /* package.sh */; };
+		C55B58622F27EEA5009ED991 /* LEGAL.md in Resources */ = {isa = PBXBuildFile; fileRef = C55B584A2F27EEA5009ED991 /* LEGAL.md */; };
+		C55B58632F27EEA5009ED991 /* orange-cheeto-v1.0.0.zip in Resources */ = {isa = PBXBuildFile; fileRef = C55B584B2F27EEA5009ED991 /* orange-cheeto-v1.0.0.zip */; };
+		C55B58642F27EEA5009ED991 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = C55B584C2F27EEA5009ED991 /* manifest.json */; };
+		C55B58652F27EEA5009ED991 /* STORE_LISTING.md in Resources */ = {isa = PBXBuildFile; fileRef = C55B584D2F27EEA5009ED991 /* STORE_LISTING.md */; };
+		C55B58662F27EEA5009ED991 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = C55B584E2F27EEA5009ED991 /* assets */; };
+		C55B58672F27EEA5009ED991 /* src in Resources */ = {isa = PBXBuildFile; fileRef = C55B584F2F27EEA5009ED991 /* src */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C55B58172F27EEA4009ED991 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C55B57E42F27EEA3009ED991 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C55B58142F27EEA4009ED991;
+			remoteInfo = "Orange Cheeto Extension (iOS)";
+		};
+		C55B58212F27EEA4009ED991 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C55B57E42F27EEA3009ED991 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C55B581E2F27EEA4009ED991;
+			remoteInfo = "Orange Cheeto Extension (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C55B58382F27EEA4009ED991 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C55B58162F27EEA4009ED991 /* Orange Cheeto Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C55B583F2F27EEA4009ED991 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C55B58202F27EEA4009ED991 /* Orange Cheeto Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		C55B57EB2F27EEA3009ED991 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = Base.lproj/Main.html; sourceTree = "<group>"; };
+		C55B57EC2F27EEA3009ED991 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		C55B57ED2F27EEA3009ED991 /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
+		C55B57EE2F27EEA3009ED991 /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
+		C55B57EF2F27EEA3009ED991 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C55B57F02F27EEA4009ED991 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C55B57F22F27EEA4009ED991 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		C55B57F72F27EEA4009ED991 /* Orange Cheeto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Orange Cheeto.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C55B57FA2F27EEA4009ED991 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C55B57FC2F27EEA4009ED991 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C55B57FF2F27EEA4009ED991 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C55B58022F27EEA4009ED991 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C55B58042F27EEA4009ED991 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C55B58092F27EEA4009ED991 /* Orange Cheeto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Orange Cheeto.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C55B580B2F27EEA4009ED991 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C55B580E2F27EEA4009ED991 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C55B58102F27EEA4009ED991 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C55B58152F27EEA4009ED991 /* Orange Cheeto Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Orange Cheeto Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C55B581A2F27EEA4009ED991 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C55B581F2F27EEA4009ED991 /* Orange Cheeto Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Orange Cheeto Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C55B58242F27EEA4009ED991 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C55B58442F27EEA5009ED991 /* PRIVACY_POLICY.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = PRIVACY_POLICY.md; path = ../../../orange_cheeto/PRIVACY_POLICY.md; sourceTree = "<group>"; };
+		C55B58452F27EEA5009ED991 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE; path = ../../../orange_cheeto/LICENSE; sourceTree = "<group>"; };
+		C55B58462F27EEA5009ED991 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../../orange_cheeto/README.md; sourceTree = "<group>"; };
+		C55B58472F27EEA5009ED991 /* MARKETING.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = MARKETING.md; path = ../../../orange_cheeto/MARKETING.md; sourceTree = "<group>"; };
+		C55B58482F27EEA5009ED991 /* SCREENSHOTS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = SCREENSHOTS.md; path = ../../../orange_cheeto/SCREENSHOTS.md; sourceTree = "<group>"; };
+		C55B58492F27EEA5009ED991 /* package.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = package.sh; path = ../../../orange_cheeto/package.sh; sourceTree = "<group>"; };
+		C55B584A2F27EEA5009ED991 /* LEGAL.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = LEGAL.md; path = ../../../orange_cheeto/LEGAL.md; sourceTree = "<group>"; };
+		C55B584B2F27EEA5009ED991 /* orange-cheeto-v1.0.0.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; name = "orange-cheeto-v1.0.0.zip"; path = "../../../orange_cheeto/orange-cheeto-v1.0.0.zip"; sourceTree = "<group>"; };
+		C55B584C2F27EEA5009ED991 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = ../../../orange_cheeto/manifest.json; sourceTree = "<group>"; };
+		C55B584D2F27EEA5009ED991 /* STORE_LISTING.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = STORE_LISTING.md; path = ../../../orange_cheeto/STORE_LISTING.md; sourceTree = "<group>"; };
+		C55B584E2F27EEA5009ED991 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = assets; path = ../../../orange_cheeto/assets; sourceTree = "<group>"; };
+		C55B584F2F27EEA5009ED991 /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; name = src; path = ../../../orange_cheeto/src; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C55B57F42F27EEA4009ED991 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C55B58062F27EEA4009ED991 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C55B58122F27EEA4009ED991 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C55B581C2F27EEA4009ED991 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C55B57E32F27EEA3009ED991 = {
+			isa = PBXGroup;
+			children = (
+				C55B57E82F27EEA3009ED991 /* Shared (App) */,
+				C55B57F12F27EEA4009ED991 /* Shared (Extension) */,
+				C55B57F92F27EEA4009ED991 /* iOS (App) */,
+				C55B580A2F27EEA4009ED991 /* macOS (App) */,
+				C55B58192F27EEA4009ED991 /* iOS (Extension) */,
+				C55B58232F27EEA4009ED991 /* macOS (Extension) */,
+				C55B57F82F27EEA4009ED991 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C55B57E82F27EEA3009ED991 /* Shared (App) */ = {
+			isa = PBXGroup;
+			children = (
+				C55B57EF2F27EEA3009ED991 /* ViewController.swift */,
+				C55B57F02F27EEA4009ED991 /* Assets.xcassets */,
+				C55B57E92F27EEA3009ED991 /* Resources */,
+			);
+			path = "Shared (App)";
+			sourceTree = "<group>";
+		};
+		C55B57E92F27EEA3009ED991 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C55B57EA2F27EEA3009ED991 /* Main.html */,
+				C55B57EC2F27EEA3009ED991 /* Icon.png */,
+				C55B57ED2F27EEA3009ED991 /* Style.css */,
+				C55B57EE2F27EEA3009ED991 /* Script.js */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C55B57F12F27EEA4009ED991 /* Shared (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				C55B58432F27EEA5009ED991 /* Resources */,
+				C55B57F22F27EEA4009ED991 /* SafariWebExtensionHandler.swift */,
+			);
+			path = "Shared (Extension)";
+			sourceTree = "<group>";
+		};
+		C55B57F82F27EEA4009ED991 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C55B57F72F27EEA4009ED991 /* Orange Cheeto.app */,
+				C55B58092F27EEA4009ED991 /* Orange Cheeto.app */,
+				C55B58152F27EEA4009ED991 /* Orange Cheeto Extension.appex */,
+				C55B581F2F27EEA4009ED991 /* Orange Cheeto Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C55B57F92F27EEA4009ED991 /* iOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				C55B57FA2F27EEA4009ED991 /* AppDelegate.swift */,
+				C55B57FC2F27EEA4009ED991 /* SceneDelegate.swift */,
+				C55B57FE2F27EEA4009ED991 /* LaunchScreen.storyboard */,
+				C55B58012F27EEA4009ED991 /* Main.storyboard */,
+				C55B58042F27EEA4009ED991 /* Info.plist */,
+			);
+			path = "iOS (App)";
+			sourceTree = "<group>";
+		};
+		C55B580A2F27EEA4009ED991 /* macOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				C55B580B2F27EEA4009ED991 /* AppDelegate.swift */,
+				C55B580D2F27EEA4009ED991 /* Main.storyboard */,
+				C55B58102F27EEA4009ED991 /* Info.plist */,
+			);
+			path = "macOS (App)";
+			sourceTree = "<group>";
+		};
+		C55B58192F27EEA4009ED991 /* iOS (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				C55B581A2F27EEA4009ED991 /* Info.plist */,
+			);
+			path = "iOS (Extension)";
+			sourceTree = "<group>";
+		};
+		C55B58232F27EEA4009ED991 /* macOS (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				C55B58242F27EEA4009ED991 /* Info.plist */,
+			);
+			path = "macOS (Extension)";
+			sourceTree = "<group>";
+		};
+		C55B58432F27EEA5009ED991 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C55B58442F27EEA5009ED991 /* PRIVACY_POLICY.md */,
+				C55B58452F27EEA5009ED991 /* LICENSE */,
+				C55B58462F27EEA5009ED991 /* README.md */,
+				C55B58472F27EEA5009ED991 /* MARKETING.md */,
+				C55B58482F27EEA5009ED991 /* SCREENSHOTS.md */,
+				C55B58492F27EEA5009ED991 /* package.sh */,
+				C55B584A2F27EEA5009ED991 /* LEGAL.md */,
+				C55B584B2F27EEA5009ED991 /* orange-cheeto-v1.0.0.zip */,
+				C55B584C2F27EEA5009ED991 /* manifest.json */,
+				C55B584D2F27EEA5009ED991 /* STORE_LISTING.md */,
+				C55B584E2F27EEA5009ED991 /* assets */,
+				C55B584F2F27EEA5009ED991 /* src */,
+			);
+			name = Resources;
+			path = "Shared (Extension)";
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C55B57F62F27EEA4009ED991 /* Orange Cheeto (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C55B58392F27EEA4009ED991 /* Build configuration list for PBXNativeTarget "Orange Cheeto (iOS)" */;
+			buildPhases = (
+				C55B57F32F27EEA4009ED991 /* Sources */,
+				C55B57F42F27EEA4009ED991 /* Frameworks */,
+				C55B57F52F27EEA4009ED991 /* Resources */,
+				C55B58382F27EEA4009ED991 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C55B58182F27EEA4009ED991 /* PBXTargetDependency */,
+			);
+			name = "Orange Cheeto (iOS)";
+			packageProductDependencies = (
+			);
+			productName = "Orange Cheeto (iOS)";
+			productReference = C55B57F72F27EEA4009ED991 /* Orange Cheeto.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C55B58082F27EEA4009ED991 /* Orange Cheeto (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C55B58402F27EEA4009ED991 /* Build configuration list for PBXNativeTarget "Orange Cheeto (macOS)" */;
+			buildPhases = (
+				C55B58052F27EEA4009ED991 /* Sources */,
+				C55B58062F27EEA4009ED991 /* Frameworks */,
+				C55B58072F27EEA4009ED991 /* Resources */,
+				C55B583F2F27EEA4009ED991 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C55B58222F27EEA4009ED991 /* PBXTargetDependency */,
+			);
+			name = "Orange Cheeto (macOS)";
+			packageProductDependencies = (
+			);
+			productName = "Orange Cheeto (macOS)";
+			productReference = C55B58092F27EEA4009ED991 /* Orange Cheeto.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C55B58142F27EEA4009ED991 /* Orange Cheeto Extension (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C55B58352F27EEA4009ED991 /* Build configuration list for PBXNativeTarget "Orange Cheeto Extension (iOS)" */;
+			buildPhases = (
+				C55B58112F27EEA4009ED991 /* Sources */,
+				C55B58122F27EEA4009ED991 /* Frameworks */,
+				C55B58132F27EEA4009ED991 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Orange Cheeto Extension (iOS)";
+			packageProductDependencies = (
+			);
+			productName = "Orange Cheeto Extension (iOS)";
+			productReference = C55B58152F27EEA4009ED991 /* Orange Cheeto Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		C55B581E2F27EEA4009ED991 /* Orange Cheeto Extension (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C55B583C2F27EEA4009ED991 /* Build configuration list for PBXNativeTarget "Orange Cheeto Extension (macOS)" */;
+			buildPhases = (
+				C55B581B2F27EEA4009ED991 /* Sources */,
+				C55B581C2F27EEA4009ED991 /* Frameworks */,
+				C55B581D2F27EEA4009ED991 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Orange Cheeto Extension (macOS)";
+			packageProductDependencies = (
+			);
+			productName = "Orange Cheeto Extension (macOS)";
+			productReference = C55B581F2F27EEA4009ED991 /* Orange Cheeto Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C55B57E42F27EEA3009ED991 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2620;
+				LastUpgradeCheck = 2620;
+				TargetAttributes = {
+					C55B57F62F27EEA4009ED991 = {
+						CreatedOnToolsVersion = 26.2;
+					};
+					C55B58082F27EEA4009ED991 = {
+						CreatedOnToolsVersion = 26.2;
+					};
+					C55B58142F27EEA4009ED991 = {
+						CreatedOnToolsVersion = 26.2;
+					};
+					C55B581E2F27EEA4009ED991 = {
+						CreatedOnToolsVersion = 26.2;
+					};
+				};
+			};
+			buildConfigurationList = C55B57E72F27EEA3009ED991 /* Build configuration list for PBXProject "Orange Cheeto" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C55B57E32F27EEA3009ED991;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = C55B57F82F27EEA4009ED991 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C55B57F62F27EEA4009ED991 /* Orange Cheeto (iOS) */,
+				C55B58082F27EEA4009ED991 /* Orange Cheeto (macOS) */,
+				C55B58142F27EEA4009ED991 /* Orange Cheeto Extension (iOS) */,
+				C55B581E2F27EEA4009ED991 /* Orange Cheeto Extension (macOS) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C55B57F52F27EEA4009ED991 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C55B58272F27EEA4009ED991 /* Icon.png in Resources */,
+				C55B58002F27EEA4009ED991 /* LaunchScreen.storyboard in Resources */,
+				C55B58252F27EEA4009ED991 /* Main.html in Resources */,
+				C55B582B2F27EEA4009ED991 /* Script.js in Resources */,
+				C55B582F2F27EEA4009ED991 /* Assets.xcassets in Resources */,
+				C55B58032F27EEA4009ED991 /* Main.storyboard in Resources */,
+				C55B58292F27EEA4009ED991 /* Style.css in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C55B58072F27EEA4009ED991 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C55B58282F27EEA4009ED991 /* Icon.png in Resources */,
+				C55B582A2F27EEA4009ED991 /* Style.css in Resources */,
+				C55B580F2F27EEA4009ED991 /* Main.storyboard in Resources */,
+				C55B582C2F27EEA4009ED991 /* Script.js in Resources */,
+				C55B58302F27EEA4009ED991 /* Assets.xcassets in Resources */,
+				C55B58262F27EEA4009ED991 /* Main.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C55B58132F27EEA4009ED991 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C55B585E2F27EEA5009ED991 /* README.md in Resources */,
+				C55B585F2F27EEA5009ED991 /* MARKETING.md in Resources */,
+				C55B58632F27EEA5009ED991 /* orange-cheeto-v1.0.0.zip in Resources */,
+				C55B58672F27EEA5009ED991 /* src in Resources */,
+				C55B58652F27EEA5009ED991 /* STORE_LISTING.md in Resources */,
+				C55B58602F27EEA5009ED991 /* SCREENSHOTS.md in Resources */,
+				C55B58642F27EEA5009ED991 /* manifest.json in Resources */,
+				C55B585D2F27EEA5009ED991 /* LICENSE in Resources */,
+				C55B585C2F27EEA5009ED991 /* PRIVACY_POLICY.md in Resources */,
+				C55B58622F27EEA5009ED991 /* LEGAL.md in Resources */,
+				C55B58612F27EEA5009ED991 /* package.sh in Resources */,
+				C55B58662F27EEA5009ED991 /* assets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C55B581D2F27EEA4009ED991 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C55B58522F27EEA5009ED991 /* README.md in Resources */,
+				C55B58532F27EEA5009ED991 /* MARKETING.md in Resources */,
+				C55B58572F27EEA5009ED991 /* orange-cheeto-v1.0.0.zip in Resources */,
+				C55B585B2F27EEA5009ED991 /* src in Resources */,
+				C55B58592F27EEA5009ED991 /* STORE_LISTING.md in Resources */,
+				C55B58542F27EEA5009ED991 /* SCREENSHOTS.md in Resources */,
+				C55B58582F27EEA5009ED991 /* manifest.json in Resources */,
+				C55B58512F27EEA5009ED991 /* LICENSE in Resources */,
+				C55B58502F27EEA5009ED991 /* PRIVACY_POLICY.md in Resources */,
+				C55B58562F27EEA5009ED991 /* LEGAL.md in Resources */,
+				C55B58552F27EEA5009ED991 /* package.sh in Resources */,
+				C55B585A2F27EEA5009ED991 /* assets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C55B57F32F27EEA4009ED991 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C55B582D2F27EEA4009ED991 /* ViewController.swift in Sources */,
+				C55B57FB2F27EEA4009ED991 /* AppDelegate.swift in Sources */,
+				C55B57FD2F27EEA4009ED991 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C55B58052F27EEA4009ED991 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C55B582E2F27EEA4009ED991 /* ViewController.swift in Sources */,
+				C55B580C2F27EEA4009ED991 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C55B58112F27EEA4009ED991 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C55B58312F27EEA4009ED991 /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C55B581B2F27EEA4009ED991 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C55B58322F27EEA4009ED991 /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C55B58182F27EEA4009ED991 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C55B58142F27EEA4009ED991 /* Orange Cheeto Extension (iOS) */;
+			targetProxy = C55B58172F27EEA4009ED991 /* PBXContainerItemProxy */;
+		};
+		C55B58222F27EEA4009ED991 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C55B581E2F27EEA4009ED991 /* Orange Cheeto Extension (macOS) */;
+			targetProxy = C55B58212F27EEA4009ED991 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C55B57EA2F27EEA3009ED991 /* Main.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C55B57EB2F27EEA3009ED991 /* Base */,
+			);
+			name = Main.html;
+			sourceTree = "<group>";
+		};
+		C55B57FE2F27EEA4009ED991 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C55B57FF2F27EEA4009ED991 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C55B58012F27EEA4009ED991 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C55B58022F27EEA4009ED991 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C55B580D2F27EEA4009ED991 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C55B580E2F27EEA4009ED991 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C55B58332F27EEA4009ED991 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C55B58342F27EEA4009ED991 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		C55B58362F27EEA4009ED991 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D8NPZUSK5W;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Orange Cheeto Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.orangecheeto.app.Extension;
+				PRODUCT_NAME = "Orange Cheeto Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C55B58372F27EEA4009ED991 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D8NPZUSK5W;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Orange Cheeto Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.orangecheeto.app.Extension;
+				PRODUCT_NAME = "Orange Cheeto Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C55B583A2F27EEA4009ED991 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D8NPZUSK5W;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Orange Cheeto";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.orangecheeto.app;
+				PRODUCT_NAME = "Orange Cheeto";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C55B583B2F27EEA4009ED991 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D8NPZUSK5W;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Orange Cheeto";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.orangecheeto.app;
+				PRODUCT_NAME = "Orange Cheeto";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C55B583D2F27EEA4009ED991 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D8NPZUSK5W;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Orange Cheeto Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.orangecheeto.app.Extension;
+				PRODUCT_NAME = "Orange Cheeto Extension";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		C55B583E2F27EEA4009ED991 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D8NPZUSK5W;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Orange Cheeto Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.orangecheeto.app.Extension;
+				PRODUCT_NAME = "Orange Cheeto Extension";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		C55B58412F27EEA4009ED991 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D8NPZUSK5W;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Orange Cheeto";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.orangecheeto.app;
+				PRODUCT_NAME = "Orange Cheeto";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		C55B58422F27EEA4009ED991 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D8NPZUSK5W;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Orange Cheeto";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.orangecheeto.app;
+				PRODUCT_NAME = "Orange Cheeto";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C55B57E72F27EEA3009ED991 /* Build configuration list for PBXProject "Orange Cheeto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C55B58332F27EEA4009ED991 /* Debug */,
+				C55B58342F27EEA4009ED991 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C55B58352F27EEA4009ED991 /* Build configuration list for PBXNativeTarget "Orange Cheeto Extension (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C55B58362F27EEA4009ED991 /* Debug */,
+				C55B58372F27EEA4009ED991 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C55B58392F27EEA4009ED991 /* Build configuration list for PBXNativeTarget "Orange Cheeto (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C55B583A2F27EEA4009ED991 /* Debug */,
+				C55B583B2F27EEA4009ED991 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C55B583C2F27EEA4009ED991 /* Build configuration list for PBXNativeTarget "Orange Cheeto Extension (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C55B583D2F27EEA4009ED991 /* Debug */,
+				C55B583E2F27EEA4009ED991 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C55B58402F27EEA4009ED991 /* Build configuration list for PBXNativeTarget "Orange Cheeto (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C55B58412F27EEA4009ED991 /* Debug */,
+				C55B58422F27EEA4009ED991 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C55B57E42F27EEA3009ED991 /* Project object */;
+}

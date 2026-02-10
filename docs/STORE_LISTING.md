@@ -68,7 +68,7 @@ Sometimes you just need a little levity in your news consumption. This extension
 
 **SUPPORT**
 
-Love the extension? Consider buying me a covfefe: [Ko-fi link]
+Love the extension? Consider buying me a covfefe: https://ko-fi.com/thedudeabode
 Found a bug? Report it on GitHub: [GitHub link]
 Support email: orangecheetotaco@gmail.com
 Privacy policy: https://gist.github.com/pcortes/5f30b8822433efe60f60b838a29958c8

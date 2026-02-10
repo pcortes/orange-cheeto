@@ -31,7 +31,7 @@ A Chrome extension that automatically replaces "Trump" with delightful nicknames
 ## Installation
 
 ### From Chrome Web Store (Recommended)
-1. Visit the [Chrome Web Store listing](#) <!-- Replace with actual link -->
+1. Visit the [Chrome Web Store listing](https://chromewebstore.google.com/detail/orange-cheeto/ahlkccapbjplgjanggoclfmoodmlceda)
 2. Click "Add to Chrome"
 3. Enjoy your improved news experience
 
@@ -102,7 +102,7 @@ Love this extension?
 
 - Star this repo
 - Share with friends
-- [Fund my covfefe](https://ko-fi.com/yourusername) <!-- Replace with actual link -->
+- [Fund my covfefe](https://ko-fi.com/thedudeabode)
 
 ## License
 
