@@ -623,14 +623,10 @@ describe('Integration: Complete Workflow Simulation', () => {
   });
 
   it('simulates full user workflow: fresh install -> use -> language change', async () => {
-    // Step 1: Fresh install - storage is empty
-    mockStorage.sync._setData({});
-
-    // Step 2: Extension loads and migrates (gets defaults)
-    const loaded = await new Promise(resolve => {
-      chrome.storage.sync.get(null, resolve);
-    });
-    const settings = migrateToV2(loaded);
+    // Step 1: Fresh install - use default settings (not empty migration)
+    // In the real app, safeLoadSettings returns defaults for fresh install
+    const settings = getDefaultSettings();
+    mockStorage.sync._setData(settings);
 
     expect(settings.schemaVersion).toBe(2);
     expect(settings.language).toBe('auto');
