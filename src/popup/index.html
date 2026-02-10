@@ -28,6 +28,21 @@
 
     <!-- Main Content -->
     <main class="main" id="mainContent">
+      <!-- Language Selector -->
+      <section class="section">
+        <h2 class="section__title">Language</h2>
+        <div class="language-selector">
+          <select id="languageSelect" class="select">
+            <option value="auto">Auto-detect</option>
+            <option value="en">English</option>
+            <option value="es">Espanol</option>
+            <option value="fr">Francais</option>
+            <option value="de">Deutsch</option>
+          </select>
+          <span class="language-note" id="languageNote"></span>
+        </div>
+      </section>
+
       <!-- Replacement List -->
       <section class="section">
         <h2 class="section__title">Nicknames</h2>
@@ -101,6 +116,7 @@
 
   </div>
 
+  <script src="../shared/locales.js"></script>
   <script src="../shared/storage.js"></script>
   <script src="popup.js"></script>
 </body>

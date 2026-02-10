@@ -1,43 +1,54 @@
 /**
  * Orange Cheeto - Background Service Worker
- * Handles install, badge updates, and message passing
+ * Handles install, badge updates, message passing, and storage migration
  */
 
-// Default settings (same as in storage.js)
-const DEFAULTS = {
+// Import storage utilities (service worker context)
+importScripts('../shared/storage.js');
+
+// v2 Default settings - use getDefaultSettings from storage.js
+const DEFAULTS_V2 = {
+  schemaVersion: 2,
   enabled: true,
+  language: "auto",
   animationType: 'shimmer',
-  replacements: [
-    { text: "orange cheeto", enabled: true },
-    { text: "mango mussolini", enabled: true },
-    { text: "cheeto benito", enabled: true },
-    { text: "the tangerine tyrant", enabled: true },
-    { text: "agent orange", enabled: true },
-    { text: "dorito mussolini", enabled: false },
-    { text: "cheeto jesus", enabled: false }
-  ]
+  enabledNicknames: {
+    "orange-cheeto": true,
+    "mango-mussolini": true,
+    "cheeto-benito": true,
+    "tangerine-tyrant": true,
+    "agent-orange": true,
+    "dorito-mussolini": false,
+    "cheeto-jesus": false
+  },
+  customNicknames: []
 };
 
 // Track replacement counts per tab
 const tabCounts = new Map();
 
 /**
- * Handle extension install
+ * Handle extension install and update - run storage migration
  */
 chrome.runtime.onInstalled.addListener(async (details) => {
   if (details.reason === 'install') {
-    // Set default settings on first install
-    await chrome.storage.sync.set(DEFAULTS);
-    console.log('[Orange Cheeto] Extension installed with defaults');
+    // First install: set v2 defaults
+    await chrome.storage.sync.set(DEFAULTS_V2);
+    console.log('[Orange Cheeto] Extension installed with v2 schema defaults');
   } else if (details.reason === 'update') {
-    // Migrate settings if needed on update
-    const settings = await chrome.storage.sync.get(DEFAULTS);
-
-    // Ensure all default keys exist (for new settings in updates)
-    const merged = { ...DEFAULTS, ...settings };
-    await chrome.storage.sync.set(merged);
-
-    console.log('[Orange Cheeto] Extension updated');
+    // Update: run migration from v1 to v2 if needed
+    try {
+      const migrated = await OrangeCheetoStorage.runMigrationIfNeeded();
+      if (migrated) {
+        console.log('[Orange Cheeto] Extension updated - storage migrated to v2');
+      } else {
+        console.log('[Orange Cheeto] Extension updated - already on v2 schema');
+      }
+    } catch (e) {
+      console.error('[Orange Cheeto] Migration error:', e);
+      // Fallback: ensure v2 defaults exist
+      await chrome.storage.sync.set(DEFAULTS_V2);
+    }
   }
 });
 
@@ -61,8 +72,8 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       return true;
 
     case 'getSettings':
-      // Return current settings
-      chrome.storage.sync.get(DEFAULTS).then(settings => {
+      // Return current settings (with v2 migration)
+      OrangeCheetoStorage.get().then(settings => {
         sendResponse(settings);
       });
       return true; // Async response
@@ -123,13 +134,19 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo) => {
 });
 
 /**
- * Handle extension enable/disable
+ * Handle settings changes (enabled, language, nicknames)
+ * Notify all tabs when relevant settings change
  */
 chrome.storage.onChanged.addListener((changes, areaName) => {
   if (areaName !== 'sync') return;
 
-  if (changes.enabled) {
-    // Notify all tabs of state change
+  // Notify tabs when enabled, language, or nicknames change
+  const needsNotification = changes.enabled ||
+                            changes.language ||
+                            changes.enabledNicknames ||
+                            changes.customNicknames;
+
+  if (needsNotification) {
     chrome.tabs.query({}, (tabs) => {
       for (const tab of tabs) {
         if (tab.id) {

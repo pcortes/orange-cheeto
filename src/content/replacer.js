@@ -195,6 +195,15 @@ const Replacer = {
   updateCountFromDOM() {
     this.replacementCount = document.querySelectorAll('.oc-replaced').length;
     return this.replacementCount;
+  },
+
+  /**
+   * Reset the replacer state (used before reprocessing with new language/settings)
+   */
+  reset() {
+    this.settings = null;
+    this.enabledReplacements = [];
+    this.replacementCount = 0;
   }
 };
 
