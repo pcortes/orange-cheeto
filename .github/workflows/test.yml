@@ -1,0 +1,105 @@
+name: Test
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run unit tests
+        run: npm test -- --run
+
+      - name: Run tests with coverage
+        run: npm run test:coverage -- --run
+
+      - name: Upload coverage report
+        uses: codecov/codecov-action@v4
+        if: always()
+        with:
+          files: ./coverage/lcov.info
+          fail_ci_if_error: false
+        continue-on-error: true
+
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run ESLint
+        run: npm run lint || echo "Lint warnings found"
+        continue-on-error: true
+
+  build:
+    runs-on: ubuntu-latest
+    needs: [test]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Verify Chrome build
+        run: |
+          chmod +x ./scripts/build.sh
+          ./scripts/build.sh chrome
+          # Verify manifest exists
+          test -f ./extensions/chrome/manifest.json
+          # Verify source files copied
+          test -f ./extensions/chrome/src/content/index.js
+          test -f ./extensions/chrome/src/shared/storage.js
+          test -f ./extensions/chrome/src/shared/locales.js
+
+      - name: Verify Firefox build
+        run: |
+          ./scripts/build.sh firefox
+          # Verify manifest exists
+          test -f ./extensions/firefox/manifest.json
+          # Verify source files copied
+          test -f ./extensions/firefox/src/content/index.js
+
+      - name: Create Chrome ZIP
+        run: ./scripts/build.sh chrome --zip
+
+      - name: Create Firefox ZIP
+        run: ./scripts/build.sh firefox --zip
+
+      - name: Upload Chrome extension artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: chrome-extension
+          path: orange-cheeto-chrome-*.zip
+          retention-days: 7
+
+      - name: Upload Firefox extension artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: firefox-extension
+          path: orange-cheeto-firefox-*.zip
+          retention-days: 7

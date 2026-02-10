@@ -1,0 +1,30 @@
+{
+  "env": {
+    "browser": true,
+    "es2022": true,
+    "webextensions": true
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module"
+  },
+  "globals": {
+    "chrome": "readonly",
+    "OrangeCheetoStorage": "readonly",
+    "OrangeCheetoLocales": "readonly",
+    "OrangeCheetoLanguage": "readonly",
+    "Replacer": "readonly",
+    "TextWalker": "readonly"
+  },
+  "rules": {
+    "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
+    "no-console": "off"
+  },
+  "ignorePatterns": [
+    "node_modules/",
+    "extensions/",
+    "coverage/",
+    "*.zip"
+  ]
+}
