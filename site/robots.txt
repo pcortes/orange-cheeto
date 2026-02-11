@@ -1,0 +1,9 @@
+# robots.txt for cheetodon.com
+User-agent: *
+Allow: /
+
+# Block WordPress scanners from polluting logs
+Disallow: /wp-admin/
+Disallow: /wordpress/
+
+Sitemap: https://www.cheetodon.com/sitemap.xml

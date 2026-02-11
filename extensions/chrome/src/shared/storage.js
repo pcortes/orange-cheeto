@@ -8,6 +8,7 @@ const OrangeCheetoStorage = {
   defaults: {
     enabled: true,
     animationType: 'shimmer', // 'shimmer' | 'glow' | 'pulse' | 'none'
+    language: 'auto', // 'auto' | 'en' | 'es' | 'fr' | 'de'
     replacements: [
       { text: "orange cheeto", enabled: true },
       { text: "mango mussolini", enabled: true },

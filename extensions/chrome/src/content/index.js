@@ -13,6 +13,105 @@
   window.__orangeCheetoInitialized = true;
 
   let observer = null;
+  let currentSettings = null;
+
+  /**
+   * Detect page language from HTML lang attribute or meta tags
+   * @returns {string} Language code (en, es, fr, de)
+   */
+  function detectPageLanguage() {
+    // Check html lang attribute
+    const htmlLang = document.documentElement.lang || '';
+    const langCode = htmlLang.split('-')[0].toLowerCase();
+
+    // Check if it's a supported language
+    if (typeof OrangeCheetoLocales !== 'undefined' &&
+        OrangeCheetoLocales.isLanguageSupported(langCode)) {
+      return langCode;
+    }
+
+    // Fallback: check meta tags
+    const metaLang = document.querySelector('meta[http-equiv="content-language"]');
+    if (metaLang) {
+      const metaCode = metaLang.content.split('-')[0].toLowerCase();
+      if (typeof OrangeCheetoLocales !== 'undefined' &&
+          OrangeCheetoLocales.isLanguageSupported(metaCode)) {
+        return metaCode;
+      }
+    }
+
+    // Default to English
+    return 'en';
+  }
+
+  /**
+   * Get enabled replacements based on language setting
+   * @param {object} settings - Current settings
+   * @returns {string[]} Array of enabled replacement texts
+   */
+  function getLocalizedReplacements(settings) {
+    // Determine effective language
+    let langCode = settings.language || 'auto';
+    if (langCode === 'auto') {
+      langCode = detectPageLanguage();
+    }
+
+    const results = [];
+
+    // If locales are available, use localized nicknames
+    if (typeof OrangeCheetoLocales !== 'undefined') {
+      const nicknames = OrangeCheetoLocales.getNicknamesForLanguage(langCode);
+      const defaultNicknames = OrangeCheetoLocales.getNicknamesForLanguage('en');
+
+      // Build a map of English text -> enabled state from user settings
+      const enabledMap = {};
+      if (Array.isArray(settings.replacements)) {
+        for (const r of settings.replacements) {
+          if (r && r.text) {
+            enabledMap[r.text.toLowerCase()] = r.enabled;
+          }
+        }
+      }
+
+      // For each localized nickname, check if the English equivalent is enabled
+      for (let i = 0; i < nicknames.length; i++) {
+        const localizedNick = nicknames[i];
+        const englishNick = defaultNicknames[i];
+
+        // Check if enabled by looking up English text in user's settings
+        const englishText = englishNick.text.toLowerCase();
+        const isEnabled = enabledMap.hasOwnProperty(englishText)
+          ? enabledMap[englishText]
+          : localizedNick.defaultEnabled;
+
+        if (isEnabled) {
+          results.push(localizedNick.text);
+        }
+      }
+    }
+
+    // Also include custom nicknames (not in locales)
+    if (Array.isArray(settings.replacements)) {
+      const builtInTexts = new Set();
+      if (typeof OrangeCheetoLocales !== 'undefined') {
+        const defaultNicknames = OrangeCheetoLocales.getNicknamesForLanguage('en');
+        for (const nick of defaultNicknames) {
+          builtInTexts.add(nick.text.toLowerCase());
+        }
+      }
+
+      for (const r of settings.replacements) {
+        if (r && r.text && r.enabled) {
+          // Check if this is a custom nickname (not in built-in list)
+          if (!builtInTexts.has(r.text.toLowerCase())) {
+            results.push(r.text);
+          }
+        }
+      }
+    }
+
+    return results;
+  }
 
   /**
    * Initialize the extension
@@ -21,6 +120,7 @@
     try {
       // Load settings
       const settings = await OrangeCheetoStorage.get();
+      currentSettings = settings;
 
       // Check if enabled
       if (!settings.enabled) {
@@ -28,8 +128,8 @@
         return;
       }
 
-      // Get enabled replacements
-      const enabledReplacements = await OrangeCheetoStorage.getEnabledReplacements();
+      // Get enabled replacements (localized)
+      const enabledReplacements = getLocalizedReplacements(settings);
 
       if (enabledReplacements.length === 0) {
         console.log('[Orange Cheeto] No replacements enabled');
@@ -77,8 +177,20 @@
    * Handle settings changes
    */
   function handleSettingsChange(changes) {
+    // Update currentSettings with any changes
+    if (currentSettings) {
+      for (const key in changes) {
+        currentSettings[key] = changes[key].newValue;
+      }
+    }
+
     // Check if extension was toggled
-    if (changes.enabled) {
+    if (changes.enabled !== undefined) {
+      // Update Replacer's settings reference
+      if (Replacer.settings) {
+        Replacer.settings.enabled = changes.enabled.newValue;
+      }
+
       if (changes.enabled.newValue) {
         // Re-initialize when enabled
         if (observer) {
@@ -93,7 +205,18 @@
         }
         Replacer.revertAll();
         updateBadge();
+        console.log('[Orange Cheeto] Extension disabled - reverted all replacements');
       }
+      return;
+    }
+
+    // If language changed, re-process with new nicknames
+    if (changes.language) {
+      if (observer) {
+        observer.disconnect();
+      }
+      Replacer.revertAll();
+      init();
       return;
     }
 
@@ -129,6 +252,10 @@
     switch (message.type) {
       case 'getCount':
         sendResponse({ count: Replacer.getCount() });
+        return true;
+
+      case 'getPageLanguage':
+        sendResponse({ language: detectPageLanguage() });
         return true;
 
       case 'refresh':

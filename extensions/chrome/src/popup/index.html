@@ -26,6 +26,21 @@
       <span class="stats__label">replacements on this page</span>
     </div>
 
+    <!-- Language Selector -->
+    <section class="section section--language">
+      <h2 class="section__title">Language</h2>
+      <div class="language-selector" id="languageSelector">
+        <select id="languageSelect" class="language-select">
+          <option value="auto">Auto-detect</option>
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="fr">Français</option>
+          <option value="de">Deutsch</option>
+        </select>
+        <div class="language-detected" id="languageDetected"></div>
+      </div>
+    </section>
+
     <!-- Main Content -->
     <main class="main" id="mainContent">
       <!-- Replacement List -->
@@ -101,6 +116,7 @@
 
   </div>
 
+  <script src="../shared/locales.js"></script>
   <script src="../shared/storage.js"></script>
   <script src="popup.js"></script>
 </body>

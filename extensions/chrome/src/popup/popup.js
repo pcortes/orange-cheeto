@@ -15,8 +15,13 @@
     replacementList: document.getElementById('replacementList'),
     customText: document.getElementById('customText'),
     addCustom: document.getElementById('addCustom'),
-    animationSelector: document.getElementById('animationSelector')
+    animationSelector: document.getElementById('animationSelector'),
+    languageSelect: document.getElementById('languageSelect'),
+    languageDetected: document.getElementById('languageDetected')
   };
+
+  // Detected language from page
+  let detectedLanguage = 'en';
 
   // Current settings
   let settings = null;
@@ -28,8 +33,12 @@
     // Load settings
     settings = await OrangeCheetoStorage.get();
 
+    // Detect page language
+    await detectPageLanguage();
+
     // Render UI
     renderMasterToggle();
+    renderLanguageSelector();
     renderReplacementList();
     renderAnimationSelector();
 
@@ -85,6 +94,75 @@
     for (const radio of radios) {
       radio.checked = radio.value === settings.animationType;
     }
+  }
+
+  /**
+   * Detect the language of the current page
+   */
+  async function detectPageLanguage() {
+    try {
+      const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+
+      if (tab?.id) {
+        const response = await chrome.tabs.sendMessage(tab.id, { type: 'getPageLanguage' });
+        if (response?.language) {
+          detectedLanguage = response.language;
+        }
+      }
+    } catch (error) {
+      // Content script might not be loaded, default to 'en'
+      detectedLanguage = 'en';
+    }
+  }
+
+  /**
+   * Render language selector
+   */
+  function renderLanguageSelector() {
+    // Set the select value
+    elements.languageSelect.value = settings.language || 'auto';
+
+    // Show detected language if in auto mode
+    updateDetectedLanguageDisplay();
+  }
+
+  /**
+   * Update the detected language display
+   */
+  function updateDetectedLanguageDisplay() {
+    if (settings.language === 'auto') {
+      const langName = getLanguageName(detectedLanguage);
+      elements.languageDetected.textContent = `Detected: ${langName}`;
+      elements.languageDetected.style.display = 'block';
+    } else {
+      elements.languageDetected.style.display = 'none';
+    }
+  }
+
+  /**
+   * Get human-readable language name
+   * @param {string} code - Language code
+   * @returns {string} Language name
+   */
+  function getLanguageName(code) {
+    const names = {
+      en: 'English',
+      es: 'Español',
+      fr: 'Français',
+      de: 'Deutsch'
+    };
+    return names[code] || 'English';
+  }
+
+  /**
+   * Get the effective language (resolved auto-detect)
+   * @returns {string} Language code
+   */
+  function getEffectiveLanguage() {
+    if (settings.language === 'auto') {
+      return detectedLanguage;
+    }
+    return settings.language;
   }
 
   /**
@@ -196,6 +274,17 @@
         await OrangeCheetoStorage.set({ animationType: settings.animationType });
         showToast(`Animation: ${e.target.value}`);
       }
+    });
+
+    // Language selector
+    elements.languageSelect.addEventListener('change', async (e) => {
+      settings.language = e.target.value;
+      await OrangeCheetoStorage.set({ language: settings.language });
+      updateDetectedLanguageDisplay();
+      showToast(`Language: ${e.target.value === 'auto' ? 'Auto-detect' : getLanguageName(e.target.value)}`);
+
+      // Refresh active tab to apply new language
+      refreshActiveTab();
     });
   }
 

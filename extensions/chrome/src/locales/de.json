@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "code": "de",
+    "name": "German",
+    "nativeName": "Deutsch"
+  },
+  "nicknames": [
+    { "id": "orange-cheeto", "text": "Der Orangene Gockel", "defaultEnabled": true },
+    { "id": "mango-mussolini", "text": "Toupetchen", "defaultEnabled": true },
+    { "id": "cheeto-benito", "text": "Der Mauerbauer", "defaultEnabled": true },
+    { "id": "tangerine-tyrant", "text": "Cheetolinchen", "defaultEnabled": true },
+    { "id": "agent-orange", "text": "Der Goldene Polterer", "defaultEnabled": true },
+    { "id": "dorito-mussolini", "text": "Schwurbel-Donald", "defaultEnabled": false },
+    { "id": "cheeto-jesus", "text": "Das Lachsorangen-Gespenst", "defaultEnabled": false }
+  ]
+}

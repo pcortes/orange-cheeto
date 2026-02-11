@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "code": "fr",
+    "name": "French",
+    "nativeName": "Francais"
+  },
+  "nicknames": [
+    { "id": "orange-cheeto", "text": "Le Clown Orange", "defaultEnabled": true },
+    { "id": "mango-mussolini", "text": "Monsieur Toupet", "defaultEnabled": true },
+    { "id": "cheeto-benito", "text": "Le Roi Solarium", "defaultEnabled": true },
+    { "id": "tangerine-tyrant", "text": "La Carotte Presidentielle", "defaultEnabled": true },
+    { "id": "agent-orange", "text": "Tonton Tango", "defaultEnabled": true },
+    { "id": "dorito-mussolini", "text": "Le Grand Blond", "defaultEnabled": false },
+    { "id": "cheeto-jesus", "text": "Sa Majeste des Tweets", "defaultEnabled": false }
+  ]
+}

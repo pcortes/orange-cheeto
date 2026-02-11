@@ -41,7 +41,7 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["src/shared/storage.js", "src/content/text-walker.js", "src/content/replacer.js", "src/content/index.js"],
+      "js": ["src/shared/locales.js", "src/shared/storage.js", "src/content/text-walker.js", "src/content/replacer.js", "src/content/index.js"],
       "css": ["src/content/styles.css"],
       "run_at": "document_idle"
     }
